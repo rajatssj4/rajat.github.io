@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Fan Page</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="fanpage.html">Fan Page</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header"></div>
+
     <div class="content">
-        <p>This is the fan page where you can share your love for Batman!</p>
+        <h2>Batman Fan Page</h2>
+        <p>Content goes here...</p>
     </div>
     <footer>
         <p>&copy; 2024 Batman Fan Page</p>
     </footer>
+
+    <script>
+        // Load the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
 </body>
 </html>
