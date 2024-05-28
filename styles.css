@@ -14,6 +14,25 @@ header h1 {
     margin: 0;
     font-size: 3em;
 }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #111;
+}
+nav ul li {
+    margin: 0 15px;
+}
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+nav ul li a:hover {
+    text-decoration: underline;
+}
 .bat-symbol {
     width: 150px;
     margin: 20px auto;
@@ -21,18 +40,18 @@ header h1 {
 .content {
     padding: 20px;
 }
-#wordpress {
-    width: 1280px;
-    height: 720px;
-    padding: 20px;
-}
 footer {
     background-color: #0a0a0a;
     padding: 10px 0;
-    position: relative;
+    position: fixed;
     width: 100%;
     bottom: 0;
 }
 footer p {
     margin: 0;
+}
+#wordpress {
+    width: 1280px;
+    height: 720px;
+    padding: 20px;
 }
