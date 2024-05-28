@@ -21,4 +21,17 @@
             <textarea id="message" name="message" rows="6" required></textarea>
 
             <input type="submit" value="Submit">
-        </form
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Batman Fan Page</p>
+    </footer>
+
+    <script>
+        // Load the header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
+</body>
+</html>
