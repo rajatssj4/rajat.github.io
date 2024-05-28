@@ -22,7 +22,8 @@ header h1 {
     padding: 20px;
 }
 #wordpress {
-    width: 100%;
+    width: 1280px;
+    height: 720px;
     padding: 20px;
 }
 footer {
