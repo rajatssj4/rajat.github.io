@@ -21,6 +21,10 @@ header h1 {
 .content {
     padding: 20px;
 }
+#wordpress {
+    width: 100%;
+    padding: 20px;
+}
 footer {
     background-color: #0a0a0a;
     padding: 10px 0;
