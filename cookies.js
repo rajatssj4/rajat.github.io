@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.body.classList.add("dark-theme");
             theme = "dark";
         }
+        console.log("Theme changed to: " + theme);
     };
     document.body.appendChild(toggleButton);
 });
