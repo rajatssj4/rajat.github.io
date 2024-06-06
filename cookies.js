@@ -5,7 +5,7 @@ function setCookie(name, value, days) {
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "") + expires + "; path=/; Secure";
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
 function getCookie(name) {
@@ -31,9 +31,37 @@ if (!getCookie("preferredLanguage")) {
     setCookie("preferredLanguage", "English", 7); // Set default preferred language
 }
 
+if (!getCookie("theme")) {
+    setCookie("theme", "light", 7); // Set default theme
+}
+
+// Uncomment below if needed
+// if (!getCookie("location")) {
+//     setCookie("location", "unknown", 7); // Set default location
+// }
+
+if (!getCookie("pagesVisited")) {
+    setCookie("pagesVisited", "0", 7); // Set default pages visited
+}
+
+if (!getCookie("lastVisit")) {
+    setCookie("lastVisit", new Date().toISOString(), 7); // Set last visit time
+}
+
+if (!getCookie("sessionCount")) {
+    setCookie("sessionCount", "1", 7); // Initialize session count
+} else {
+    var sessionCount = parseInt(getCookie("sessionCount"));
+    setCookie("sessionCount", sessionCount + 1, 7); // Increment session count
+}
+
 // Segmentation logic
 var userType = getCookie("userType");
 var preferredLanguage = getCookie("preferredLanguage");
+var theme = getCookie("theme");
+var pagesVisited = parseInt(getCookie("pagesVisited"));
+var lastVisit = getCookie("lastVisit");
+var sessionCount = getCookie("sessionCount");
 
 if (userType === "newVisitor") {
     console.log("Welcome, new visitor!");
@@ -44,3 +72,20 @@ if (userType === "newVisitor") {
 if (preferredLanguage === "English") {
     console.log("Displaying content in English.");
 }
+
+if (theme === "dark") {
+    console.log("Dark theme enabled.");
+} else {
+    console.log("Light theme enabled.");
+}
+
+// Uncomment below if needed
+// if (location === "unknown") {
+//     console.log("Location not set.");
+// } else {
+//     console.log("Location: " + location);
+// }
+
+console.log("Pages visited: " + pagesVisited);
+console.log("Last visit: " + lastVisit);
+console.log("Session count: " + sessionCount);
