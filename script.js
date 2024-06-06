@@ -17,3 +17,7 @@ document.getElementById("randomValues").innerHTML =
 console.log("Random Boolean:", randomBoolean);
 console.log("Random Text:", randomText);
 console.log("Random Number:", randomNumber);
+
+// Increment pages visited
+var pagesVisited = parseInt(getCookie("pagesVisited")) || 0;
+setCookie("pagesVisited", pagesVisited + 1, 7);
