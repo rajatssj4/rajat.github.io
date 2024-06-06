@@ -35,11 +35,6 @@ if (!getCookie("theme")) {
     setCookie("theme", "light", 7); // Set default theme
 }
 
-// Uncomment below if needed
-// if (!getCookie("location")) {
-//     setCookie("location", "unknown", 7); // Set default location
-// }
-
 if (!getCookie("pagesVisited")) {
     setCookie("pagesVisited", "0", 7); // Set default pages visited
 }
@@ -50,9 +45,10 @@ if (!getCookie("lastVisit")) {
 
 if (!getCookie("sessionCount")) {
     setCookie("sessionCount", "1", 7); // Initialize session count
-} else {
+} else if (!sessionStorage.getItem("sessionIncremented")) {
     var sessionCount = parseInt(getCookie("sessionCount"));
     setCookie("sessionCount", sessionCount + 1, 7); // Increment session count
+    sessionStorage.setItem("sessionIncremented", "true");
 }
 
 // Segmentation logic
@@ -74,18 +70,34 @@ if (preferredLanguage === "English") {
 }
 
 if (theme === "dark") {
+    document.body.classList.add("dark-theme");
     console.log("Dark theme enabled.");
 } else {
+    document.body.classList.remove("dark-theme");
     console.log("Light theme enabled.");
 }
-
-// Uncomment below if needed
-// if (location === "unknown") {
-//     console.log("Location not set.");
-// } else {
-//     console.log("Location: " + location);
-// }
 
 console.log("Pages visited: " + pagesVisited);
 console.log("Last visit: " + lastVisit);
 console.log("Session count: " + sessionCount);
+
+// Increment pages visited
+setCookie("pagesVisited", pagesVisited + 1, 7);
+
+// Theme toggle button
+document.addEventListener("DOMContentLoaded", function() {
+    var toggleButton = document.createElement("button");
+    toggleButton.textContent = "Toggle Theme";
+    toggleButton.onclick = function() {
+        if (theme === "dark") {
+            setCookie("theme", "light", 7);
+            document.body.classList.remove("dark-theme");
+            theme = "light";
+        } else {
+            setCookie("theme", "dark", 7);
+            document.body.classList.add("dark-theme");
+            theme = "dark";
+        }
+    };
+    document.body.appendChild(toggleButton);
+});
