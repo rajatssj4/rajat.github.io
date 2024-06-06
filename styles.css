@@ -101,6 +101,38 @@ footer p {
     background-color: #555;
 }
 
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #333;
+    color: #f0f0f0;
+}
+body.dark-theme header {
+    background-color: #222;
+}
+body.dark-theme footer {
+    background-color: #222;
+}
+body.dark-theme .contact-form {
+    background-color: #444;
+}
+body.dark-theme .contact-form input[type="text"],
+body.dark-theme .contact-form input[type="email"],
+body.dark-theme .contact-form textarea {
+    background-color: #555;
+    border-color: #666;
+}
+body.dark-theme .contact-form input[type="text"]:focus,
+body.dark-theme .contact-form input[type="email"]:focus,
+body.dark-theme .contact-form textarea:focus {
+    border-color: #777;
+}
+body.dark-theme .contact-form input[type="submit"] {
+    background-color: #666;
+}
+body.dark-theme .contact-form input[type="submit"]:hover {
+    background-color: #777;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     header h1 {
