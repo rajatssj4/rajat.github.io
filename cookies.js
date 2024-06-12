@@ -86,19 +86,24 @@ setCookie("pagesVisited", pagesVisited + 1, 7);
 
 // Theme toggle button
 document.addEventListener("DOMContentLoaded", function() {
-    var toggleButton = document.createElement("button");
-    toggleButton.textContent = "Toggle Theme";
+    var toggleButton = document.createElement("div");
+    toggleButton.className = "theme-toggle";
     toggleButton.onclick = function() {
         if (theme === "dark") {
             setCookie("theme", "light", 7);
             document.body.classList.remove("dark-theme");
+            toggleButton.classList.remove("active");
             theme = "light";
         } else {
             setCookie("theme", "dark", 7);
             document.body.classList.add("dark-theme");
+            toggleButton.classList.add("active");
             theme = "dark";
         }
         console.log("Theme changed to: " + theme);
     };
+    if (theme === "dark") {
+        toggleButton.classList.add("active");
+    }
     document.body.appendChild(toggleButton);
 });
