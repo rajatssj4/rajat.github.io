@@ -64,5 +64,51 @@
             .then(response => response.text())
             .then(data => document.getElementById('header').innerHTML = data);
     </script>
+    <script>
+  var visId = getCookie('_vwo_uuid');
+  var time = new Date().getTime();
+  var sessionId = Number(getCookie('_vwo_ds').split('%')[4])+Number(getCookie('_vwo_sn').split('%')[0]);
+
+  
+  fetch('https://dev.visualwebsiteoptimizer.com/as01/events/t?en=offlineTestv2&a=881107', {
+    method: 'POST',
+    headers: {
+        'accept': '*/*',
+        'accept-language': 'en-GB,en;q=0.9',
+        'content-type': 'text/plain;charset=UTF-8',
+        'origin': 'https://rajatssj4.github.io',
+        'priority': 'u=4, i',
+        'referer': 'https://rajatssj4.github.io/',
+        'sec-ch-ua': '"Not/A)Brand";v="8", "Chromium";v="126", "Google Chrome";v="126"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"macOS"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'no-cors',
+        'sec-fetch-site': 'cross-site',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36'
+    },
+    body: JSON.stringify({
+        "d": {
+            "msgId": visId+"-"+time,
+            "visId": visId,
+            "event": {
+                "props": {
+                    "page": {
+                        "title": "Batman Theme",
+                        "url": "https://rajatssj4.github.io/rajat.github.io/",
+                        "referrerUrl": ""
+                    }
+                },
+                "name": "offlineTestv2",
+                "time": time
+            },
+            "sessionId": sessionId
+        }
+    })
+})
+.then(response => response.json())
+.then(data => console.log('Success:', data))
+.catch((error) => console.error('Error:', error));
+</script>
 </body>
 </html>
