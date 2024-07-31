@@ -67,7 +67,8 @@
     <script>
   var visId = getCookie('_vwo_uuid');
   var time = new Date().getTime();
-  var sessionId = Number(getCookie('_vwo_ds').split('%')[4])+Number(getCookie('_vwo_sn').split('%')[0]);
+  var sessionId = Number(getCookie('_vwo_ds').split('%')[4].substring(2,getCookie('_vwo_ds').split('%')[4].length))+Number(getCookie('_vwo_sn').split('%')[0]);
+
 
   
   fetch('https://dev.visualwebsiteoptimizer.com/as01/events/t?en=offlineTestv2&a=881107', {
