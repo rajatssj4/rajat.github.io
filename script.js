@@ -8,6 +8,10 @@ var randomText = texts[Math.floor(Math.random() * texts.length)];
 // Generate random number between 5 million to 50 million
 var randomNumber = Math.floor(Math.random() * (50000000 - 5000000 + 1)) + 5000000;
 
+// Generate Spin Count and Price
+var spinCount = 100;
+var price = 6;
+
 // Display the random values on the website
 document.getElementById("randomValues").innerHTML = 
     "Random Boolean: " + randomBoolean + "<br>" +
