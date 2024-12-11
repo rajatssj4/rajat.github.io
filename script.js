@@ -9,8 +9,8 @@ var randomText = texts[Math.floor(Math.random() * texts.length)];
 var randomNumber = Math.floor(Math.random() * (50000000 - 5000000 + 1)) + 5000000;
 
 // Generate Spin Count and Price
-var spinCount = 500;
-var price = 12.5;
+var spinCount = 1000;
+var price = 24;
 
 // Display the random values on the website
 document.getElementById("randomValues").innerHTML = 
