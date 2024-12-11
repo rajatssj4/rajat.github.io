@@ -43,6 +43,26 @@ nav ul li a:hover {
     padding: 20px;
     text-align: center;
 }
+.button-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+.button-list li {
+    margin: 0;
+}
+.button-list a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+}
+.button-list a:hover {
+    background-color: #555;
+}
 footer {
     background-color: #0a0a0a;
     padding: 10px 0;
